@@ -17,7 +17,7 @@ ReactDOM.render(
 
 let link = React.createElement('a',
   {href: '#'},
-  'An empty link with "#"'
+  'The link with "#"'
 )
 
 ReactDOM.render(
