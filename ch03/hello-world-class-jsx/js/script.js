@@ -14,3 +14,17 @@ class HelloWorld extends React.Component {
   }
 }
 ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));
+
+class DateTimeNow extends React.Component {
+  render() {
+    let dateTimeNow = new Date().toLocaleString();
+
+    return React.createElement(
+      'span',
+      null,
+      `Current date and time is ${dateTimeNow}.`
+    )
+  }
+}
+
+ReactDOM.render(React.createElement(DateTimeNow, null), document.getElementById('content'));

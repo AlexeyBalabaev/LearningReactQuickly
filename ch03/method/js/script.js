@@ -20,4 +20,44 @@ class Content extends React.Component {
   }
 }
 
-ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
+ReactDOM.render(
+  React.createElement(Content, null), 
+  document.getElementById('content1')
+);
+
+class MyLink extends React.Component {
+  getMyUrl() {
+    return 'https://github.com/';
+  }
+
+  getInformation() {
+    return 'Typical description with a lot of text in it...';
+  }
+
+  render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'p',
+        null,
+        'The link to github: ',
+        React.createElement(
+          'a',
+          { href: this.getMyUrl() },
+          this.getMyUrl()
+        )
+      ),
+      React.createElement(
+        'p',
+        null,
+        this.getInformation()
+      )
+    )
+  }
+};
+
+ReactDOM.render(
+  React.createElement(MyLink, null),
+  document.getElementById('content2')
+);
