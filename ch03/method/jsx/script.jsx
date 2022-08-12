@@ -13,5 +13,5 @@ class Content extends React.Component {
 
 ReactDOM.render(
   <Content />,
-  document.getElementById('content')
+  document.getElementById('content1')
 )

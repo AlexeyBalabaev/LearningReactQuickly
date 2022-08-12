@@ -1,0 +1,41 @@
+{
+  "name": "learnreactquickly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-method": "./node_modules/.bin/babel ch03/method/jsx/script.jsx -o ch03/method/js/script.js -w",
+    "build-hello-js-world-jsx": "./node_modules/.bin/babel ch03/hello-js-world-jsx/jsx/script.jsx -o ch03/hello-js-world-jsx/js/script.js -w",
+    "build-hello-world-jsx": "./node_modules/.bin/babel ch03/hello-world-jsx/jsx/script.jsx -o ch03/hello-world-jsx/js/script.js -w",
+    "build-hello-world-class-jsx": "./node_modules/.bin/babel ch03/hello-world-class-jsx/jsx/script.jsx -o ch03/hello-world-class-jsx/js/script.js -w",
+    "build": "npm run build-method & npm run build-hello-js-world-jsx & npm run build-hello-world-jsx & npm run build-hello-world-class-jsx"
+  },
+  "keywords": [
+    "react.js"
+  ],
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "babel-cli": "6.24.1",
+    "babel-preset-react": "^6.24.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeyBalabaev/LearningReactQuickly.git"
+  },
+  "author": "Alex Balabaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexeyBalabaev/LearningReactQuickly/issues"
+  },
+  "homepage": "https://github.com/AlexeyBalabaev/LearningReactQuickly#readme"
+}
