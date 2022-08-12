@@ -13,13 +13,16 @@
   "keywords": [
     "react.js"
   ],
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
-    "presets": ["react"]
+    "presets": [
+      "react"
+    ]
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0",
-    "babel-preset-react": "^6.5.0"
+    "@babel/core": "^7.18.10",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
   }
 }

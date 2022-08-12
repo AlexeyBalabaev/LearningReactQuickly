@@ -6,7 +6,7 @@ const AnalogDisplay = function(props) {
     left: 0,
     width: 200,
     height: 200,
-    borderRadius: 20000,
+    borderRadius: 100,
     borderStyle: 'solid',
     borderColor: 'black'
   }
@@ -19,7 +19,8 @@ const AnalogDisplay = function(props) {
     height: 1,
     transform: 'rotate(' + ((date.getSeconds()/60)*360 - 90 ).toString() + 'deg)',
     transformOrigin: '0% 0%',
-    backgroundColor: 'red'
+    backgroundColor: 'red',
+    zIndex: 5
   }
   let minuteHandStyle = {
     position: 'relative',
