@@ -23,3 +23,32 @@ class Note extends React.Component {
     );
   }
 }
+
+class NewNote extends React.Component {
+  agreeToLeave(e) {
+    let leaveMessage = 'Do you really want to close?';
+    e.returnValue = leaveMessage;
+    return leaveMessage;
+  }
+
+  componentDidMount() {
+    console.log('Attaching agreeToLeave event listener for beforeunload...');
+    window.addEventListener('beforeunload', this.agreeToLeave);
+  }
+
+  componentWillUnmount() {
+    console.log('Removing agreeToLeave event listener for beforeunload...');
+    window.removeEventListener('beforeunload', this.agreeToLeave);
+  }
+
+  render() {
+    console.log('Rendering...');
+    return React.createElement(
+      'div',
+      null,
+      'Here will be our input field for notes (parent will remove in ',
+      this.props.secondsCounter,
+      ' seconds.)'
+    );
+  }
+}
