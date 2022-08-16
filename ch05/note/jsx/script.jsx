@@ -1,4 +1,5 @@
-let secondsLeft = 5
+let secondsLeft = 5;
+let secondsCounter = 8;
 
 let interval = setInterval(()=>{
   if (secondsLeft == 0) {

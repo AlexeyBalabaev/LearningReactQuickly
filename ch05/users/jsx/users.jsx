@@ -2,19 +2,19 @@ class Users extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      users: []
+      usersWrap: []
     }
   }
   componentDidMount() {
     fetch(this.props['data-url'])
       .then((response)=>response.json())
-      .then((users)=>this.setState({users: users}))
+      .then((users)=>this.setState({usersWrap: users}))
   }
   render() {
     return <div className="container">
       <h1>List of Users</h1>
       <table className="table-striped table-condensed table table-bordered table-hover">
-        <tbody>{this.state.users.map((user)=>
+        <tbody>{this.state.usersWrap.map((user)=>
           <tr key={user.id}>
             <td>{user.first_name} {user.last_name}</td>
             <td> {user.email}</td>

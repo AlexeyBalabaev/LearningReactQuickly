@@ -2,11 +2,11 @@ class Users extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      usersWrap: []
     };
   }
   componentDidMount() {
-    fetch(this.props['data-url']).then(response => response.json()).then(users => this.setState({ users: users }));
+    fetch(this.props['data-url']).then(response => response.json()).then(users => this.setState({ usersWrap: users }));
   }
   render() {
     return React.createElement(
@@ -23,7 +23,7 @@ class Users extends React.Component {
         React.createElement(
           "tbody",
           null,
-          this.state.users.map(user => React.createElement(
+          this.state.usersWrap.map(user => React.createElement(
             "tr",
             { key: user.id },
             React.createElement(
