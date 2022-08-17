@@ -1,4 +1,4 @@
 ReactDOM.render(
-  <SaveButton />,
+  <ButtonBlock />,
   document.getElementById('content')
 )

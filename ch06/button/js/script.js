@@ -1,1 +1,1 @@
-ReactDOM.render(React.createElement(SaveButton, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(ButtonBlock, null), document.getElementById('content'));
