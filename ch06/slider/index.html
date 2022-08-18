@@ -11,20 +11,13 @@
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/jquery-ui.js"></script>
 
-    <script>
-      $(function() {
-        let handleChange = (e, ui)=>{
-          var slideEvent = new CustomEvent('slide', {
-            detail: {ui: ui, jQueryEvent: e}
-          })
-          window.dispatchEvent(slideEvent)
-        }
-        $('#slider').slider({
-          'change': handleChange,
-          'slide': handleChange
-        })
-      })
-    </script>
+    <script src="js/main.js"></script>
+    <style>
+      .btn_wrap > button {
+        margin-right: 20px;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -33,8 +26,16 @@
       <div id="slider"></div>
 
       <div id="content"></div>
+      
+      <h2>New slider</h2>
+      <div id="new-slider"></div>
+
+      <div id="new-content"></div>
+
       <script src="js/slider-buttons.js"></script>
+      <script src="js/my-slider-buttons.js"></script>
       <script src="js/slider-value.js"></script>
+      <script src="js/my-slider-value.js"></script>
       <script src="js/script.js"></script>
     </div>
   </body>

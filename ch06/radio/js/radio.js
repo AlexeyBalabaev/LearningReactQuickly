@@ -11,6 +11,7 @@ class Radio extends React.Component {
       taggerStyle: { top: order * 20, width: 25, height: 25 }
     };
   }
+
   getStyle(i, m) {
     let value = i * m;
     return {
@@ -20,9 +21,11 @@ class Radio extends React.Component {
       right: value
     };
   }
+
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
   }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
@@ -33,6 +36,7 @@ class Radio extends React.Component {
       textStyle: { left: w * 13, fontSize: 7 * w }
     });
   }
+
   render() {
     return React.createElement(
       'div',

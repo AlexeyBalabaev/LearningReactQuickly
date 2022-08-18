@@ -13,7 +13,7 @@ class Content extends React.Component {
       null,
       React.createElement(ClickCounterButton, { handler: this.handleClick }),
       React.createElement("br", null),
-      React.createElement(Counter, { value: this.state.counter })
+      React.createElement(Counter, { elemClass: "decor-class", value: this.state.counter })
     );
   }
 }

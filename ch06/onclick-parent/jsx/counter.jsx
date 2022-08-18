@@ -1,5 +1,7 @@
 class Counter extends React.Component {
   render() {
-    return <span>Clicked {this.props.value} times.</span>
+    return (
+      <span className={this.props.elemClass}>Clicked {this.props.value} times.</span>
+    )
   }
 }

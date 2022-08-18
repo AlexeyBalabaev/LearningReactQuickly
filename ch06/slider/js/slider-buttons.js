@@ -5,25 +5,30 @@ class SliderButtons extends React.Component {
     this.handleSlide = this.handleSlide.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
   handleSlide(event, ui) {
     this.setState({ sliderValue: ui.value });
   }
+
   handleChange(value) {
     return () => {
       $('#slider').slider('value', this.state.sliderValue + value);
       this.setState({ sliderValue: this.state.sliderValue + value });
     };
   }
+
   componentDidMount() {
     $('#slider').on('slide', this.handleSlide);
   }
+
   componentWillUnmount() {
     $('#slider').off('slide', this.handleSlide);
   }
+
   render() {
     return React.createElement(
       'div',
-      null,
+      { className: 'btn_wrap' },
       React.createElement(
         'button',
         { disabled: this.state.sliderValue < 1 ? true : false,

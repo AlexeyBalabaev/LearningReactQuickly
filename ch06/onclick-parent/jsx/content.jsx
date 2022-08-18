@@ -12,7 +12,7 @@ class Content extends React.Component {
       <div>
         <ClickCounterButton handler={this.handleClick}/>
         <br/>
-        <Counter value={this.state.counter}/>
+        <Counter elemClass="decor-class" value={this.state.counter}/>
       </div>
     )
   }

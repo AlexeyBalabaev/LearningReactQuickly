@@ -2,7 +2,7 @@ class Counter extends React.Component {
   render() {
     return React.createElement(
       "span",
-      null,
+      { className: this.props.elemClass },
       "Clicked ",
       this.props.value,
       " times."
