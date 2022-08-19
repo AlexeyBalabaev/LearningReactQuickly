@@ -1,9 +1,9 @@
 $(function() {
   let handleChange = (e, ui)=>{
-    let slideEvent1 = new CustomEvent('slide', {
-      detail: {ui: ui, jQueryEvent: e}
+    let slideEvent = new CustomEvent('slide', {
+      detail: {ui1: ui, jQueryEvent: e}
     });
-    window.dispatchEvent(slideEvent1);
+    window.dispatchEvent(slideEvent);
   }
 
   $('#slider').slider({
@@ -12,10 +12,10 @@ $(function() {
   });
 
   let handleMyChange = (e, ui)=>{
-    let slideEvent2 = new CustomEvent('slide', {
-      detail: {ui: ui, jQueryEvent: e}
+    let slideEvent = new CustomEvent('slide', {
+      detail: {ui2: ui, jQueryEvent: e}
     });
-    window.dispatchEvent(slideEvent2);
+    window.dispatchEvent(slideEvent);
   }
 
   $('#new-slider').slider({

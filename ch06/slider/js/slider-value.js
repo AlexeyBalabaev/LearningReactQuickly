@@ -6,7 +6,7 @@ class SliderValue extends React.Component {
   }
 
   handleSlide(event) {
-    this.setState({ sliderValue: event.detail.ui.value });
+    this.setState({ sliderValue: event.detail.ui1.value });
   }
 
   componentDidMount() {
