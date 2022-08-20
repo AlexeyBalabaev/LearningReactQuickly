@@ -25,25 +25,31 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
       selectedValue: 'node'
     };
   }
+
   handleRadio(event) {
     let obj = {};
     obj[event.target.value] = event.target.checked; // true
     this.setState({ radioGroup: obj });
   }
+
   handleCheckbox(event) {
     let obj = this.state.checkboxGroup;
     obj[event.target.value] = event.target.checked; // true or false
     this.setState({ checkboxGroup: obj });
   }
+
   handleChange(event) {
     console.log('onChange event: ', event.target.value, event.target.checked);
   }
+
   handleInput(event) {
     console.log('onInput event: ', event.target.value, event.target.checked);
   }
+
   handleFirstNameChange(event) {
     this.setState({ firstName: event.target.value });
   }
+
   handleSubmit(event) {
     console.log(event.target.value, event.target.checked);
     fetch(this.props['data-url'], { method: 'POST', body: JSON.stringify(this.state) }).then(response => {
@@ -52,10 +58,12 @@ If you aspire one day to become a Node.js architect (or maybe you're already one
       console.log('Submitted: ', data);
     });
   }
+
   handleSelectChange(event) {
     this.setState({ selectedValue: event.target.value });
     console.log(event.target.value, event.target.selected);
   }
+
   render() {
     return React.createElement(
       'div',

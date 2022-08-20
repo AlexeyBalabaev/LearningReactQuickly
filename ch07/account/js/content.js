@@ -4,10 +4,12 @@ class Content extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = { accountNumber: '' };
   }
+
   handleChange(event) {
     console.log('Typed: ', event.target.value);
     this.setState({ accountNumber: event.target.value.replace(/[^0-9]/ig, '') });
   }
+
   render() {
     return React.createElement(
       'div',

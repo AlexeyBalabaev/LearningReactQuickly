@@ -14,8 +14,8 @@
   "keywords": [
     "react.js"
   ],
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
     "presets": [
       "react"
