@@ -1,5 +1,5 @@
 {
-  "name": "hello-world-class-jsx",
+  "name": "ch08",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,15 +14,16 @@
   "keywords": [
     "react.js"
   ],
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex  Balabaev",
+  "license": "ISC",
   "babel": {
     "presets": [
       "react"
     ]
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-preset-react": "6.24.1"
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-react": "^6.24.1"
   }
 }

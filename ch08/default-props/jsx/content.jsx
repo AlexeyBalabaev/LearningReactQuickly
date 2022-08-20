@@ -10,3 +10,17 @@ class Content extends React.Component {
     )
   }
 }
+
+class NewContent extends React.Component {
+  render() {
+    return (
+      <div style={{marginTop: '40px'}}>
+        <NewButton newButtonLabel="The first button" />
+        <NewButton />
+        <NewButton />
+        <NewButton />
+        <NewButton newButtonLabel="The latest button..." />
+      </div>
+    )
+  }
+}
