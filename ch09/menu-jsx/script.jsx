@@ -1,10 +1,13 @@
 class Menu extends React.Component {
   render() {
-    let menus = ['Home',
+    let menus = [
+      'Home',
       'About',
       'Services',
       'Portfolio',
-      'Contact us']
+      'Contact us'
+    ];
+
     return (
       <div>
         {menus.map((v,i) => {

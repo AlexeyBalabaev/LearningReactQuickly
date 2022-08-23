@@ -1,10 +1,13 @@
 class Menu extends React.Component {
   render() {
-    let menus = ['Home',
+    let menus = [
+      'Home',
       'About',
       'Services',
       'Portfolio',
-      'Contact us']
+      'Contact us'
+    ];
+
     return React.createElement('div',
       null,
       menus.map((v, i) => {
@@ -18,11 +21,8 @@ class Menu extends React.Component {
 
 class Link extends React.Component {
   render() {
-    const url='/'
-      + this.props.label
-        .toLowerCase()
-        .trim()
-        .replace(' ', '-')
+    const url='/' + this.props.label.toLowerCase().trim().replace(' ', '-');
+
     return React.createElement('div',
       null,
       React.createElement(
