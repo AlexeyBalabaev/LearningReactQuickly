@@ -9,6 +9,7 @@ class Button extends React.Component {
     );
   }
 }
+
 class Link extends React.Component {
   render() {
     return React.createElement(
@@ -18,6 +19,7 @@ class Link extends React.Component {
     );
   }
 }
+
 class Logo extends React.Component {
   render() {
     return React.createElement("img", { onClick: this.props.handleClick, width: "40", src: "logo.png", href: "#" });
@@ -27,3 +29,23 @@ class Logo extends React.Component {
 // Logo = (props)=>{
 //   return <img onClick={props.handleClick} width="40" src="logo.png" href="#"/>
 // }
+
+const NewButton = props => {
+  return React.createElement(
+    "button",
+    { className: "btn btn-danger", onClick: props.handleClick },
+    props.label
+  );
+};
+
+const NewLogo = props => {
+  return React.createElement("img", { onClick: props.handleClick, width: "40", src: "logo.png", href: "#" });
+};
+
+const NewLink = props => {
+  return React.createElement(
+    "a",
+    { onClick: props.handleClick, href: "#" },
+    props.label
+  );
+};
