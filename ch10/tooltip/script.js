@@ -4,14 +4,17 @@ class Tooltip extends React.Component {
     this.state = { opacity: false };
     this.toggle = this.toggle.bind(this);
   }
+
   toggle() {
     const tooltipNode = ReactDOM.findDOMNode(this);
+
     this.setState({
       opacity: !this.state.opacity,
       top: tooltipNode.offsetTop,
       left: tooltipNode.offsetLeft
     });
   }
+
   render() {
     const style = {
       zIndex: this.state.opacity ? 1000 : -1000,
@@ -19,6 +22,7 @@ class Tooltip extends React.Component {
       top: (this.state.top || 0) + 20,
       left: (this.state.left || 0) - 30
     };
+
     return React.createElement(
       'div',
       { style: { display: 'inline' } },
