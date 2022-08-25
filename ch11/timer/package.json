@@ -4,12 +4,16 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel timer.jsx -o timer.js -w"
+    "build-timer": "./node_modules/.bin/babel timer.jsx -o timer.js -w",
+    "build-newtimer": "./node_modules/.bin/babel new-timer.jsx -o new-timer.js -w",
+    "build": "npm run build-newtimer & npm run build-timer"
   },
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
-    "presets": ["react"]
+    "presets": [
+      "react"
+    ]
   },
   "devDependencies": {
     "babel-cli": "6.9.0",

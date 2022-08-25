@@ -6,8 +6,8 @@
   "scripts": {
     "build": "./node_modules/.bin/babel jsx -d js -w"
   },
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
     "presets": ["react"]
   },
