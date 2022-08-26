@@ -13,6 +13,6 @@ class TimerSound extends React.Component {
   }
 
   render() {
-    return <audio ref="endOfTime" src="flute_c_long_01.wav" preload="auto"></audio>
+    return <audio ref="endOfTime" src="flute_c_long_01.wav" preload="audio"></audio>
   }
 }

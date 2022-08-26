@@ -12,11 +12,16 @@
   <link href="bootstrap.css" rel="stylesheet" type="text/css"/>
   <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
 
+  <style>
+    #slider {
+      margin-top: 50px;
+    }
+  </style>
+
 </head>
 <body class="container-fluid">
 
   <div id="timer-app"></div>
-  <br><br>
   <div id="slider"></div>
 
   <script src="js/timer-button.js" type="text/javascript"></script>
@@ -27,16 +32,17 @@
   <script type="text/javascript">
     $(document).ready(() => {
       let sliderElement = $('#slider');
+
       sliderElement.on('slide', (event) => {
-        event.preventDefault();
+        event.prerventDefault();
       })
       sliderElement.hide();
 
       window.addEventListener('timerStarted', (event) => {
         sliderElement.slider({
-            min: 0,
-            max: event.detail.selectedTime,
-            step: 1,
+          min: 0,
+          max: event.detail.selectedTime,
+          step: 1,
         });
 
         sliderElement.slider('value', (event.detail.selectedTime - event.detail.timeLeft));
