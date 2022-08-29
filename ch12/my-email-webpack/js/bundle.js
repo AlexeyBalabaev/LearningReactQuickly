@@ -9516,7 +9516,6 @@ class Content extends React.Component {
 
   render() {
     this.prompt = 'Please enter your email to win a Sublime Text license';
-
     return React.createElement(
       'div',
       { className: 'well' },
