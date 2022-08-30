@@ -1,4 +1,5 @@
-const React = require('react')
+const React = require('react');
+
 module.exports = class Router extends React.Component {
   constructor(props) {
     super(props)
