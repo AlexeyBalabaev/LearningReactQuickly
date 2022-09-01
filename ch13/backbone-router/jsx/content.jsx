@@ -1,10 +1,11 @@
-const React = require('react')
-const Backbone = require('backbone')
+const React = require('react');
+const Backbone = require('backbone');
 
 class Content extends React.Component {
 
   render() {
-    let activePath = Backbone.history.getFragment()
+    let activePath = Backbone.history.getFragment();
+    
     return (
       <div>
         <h1>Node.University</h1>
@@ -37,4 +38,5 @@ class Content extends React.Component {
     )
   }
 }
-module.exports = Content
+
+module.exports = Content;

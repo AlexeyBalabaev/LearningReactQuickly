@@ -8,8 +8,8 @@
     "build": "./node_modules/.bin/webpack -w",
     "i": "rm -rf ./node_modules && npm cache clean && npm install"
   },
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
     "presets": [
       "react"

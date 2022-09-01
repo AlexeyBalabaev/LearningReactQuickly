@@ -1,18 +1,20 @@
-const React = require('react')
-const {render} = require ('react-dom')
-const Backbone = require ('backbone')
+const React = require('react');
+const {render} = require ('react-dom');
+const Backbone = require ('backbone');
 
-const Content = require('./content.jsx')
-const About = require('./about.jsx')
-const Contact = require('./contact.jsx')
-const Login = require('./login.jsx')
-const Post = require('./post.jsx')
-const Posts = require('./posts.jsx')
+const Content = require('./content.jsx');
+const About = require('./about.jsx');
+const Contact = require('./contact.jsx');
+const Login = require('./login.jsx');
+const Post = require('./post.jsx');
+const Posts = require('./posts.jsx');
 
-const posts = require('../posts.js')
+const posts = require('../posts.js');
 
-const jQuery = require('jquery')
-let content = document.getElementById('content')
+const jQuery = require('jquery');
+
+let content = document.getElementById('content');
+
 const Router = Backbone.Router.extend({
   routes: {
     ''    : 'index',
@@ -51,6 +53,6 @@ const Router = Backbone.Router.extend({
 
 })
 
-let router = new Router()
+let router = new Router();
 
-Backbone.history.start()
+Backbone.history.start();

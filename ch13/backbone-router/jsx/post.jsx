@@ -1,7 +1,8 @@
-const React = require('react')
+const React = require('react');
 
 module.exports = function Product(props) {
-  let post = props.posts.find(element=>element.slug === props.id)
+  let post = props.posts.find(element=>element.slug === props.id);
+  
   return (
     <div>
       <h3>{post.title}</h3>

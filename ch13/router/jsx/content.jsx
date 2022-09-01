@@ -1,5 +1,5 @@
-const React = require('react')
-const {Link} = require('react-router')
+const React = require('react');
+const {Link} = require('react-router');
 
 class Content extends React.Component {
   render() {
@@ -35,7 +35,9 @@ class Content extends React.Component {
     )
   }
 }
+
 Content.contextTypes = {
   router: React.PropTypes.object.isRequired
-}
-module.exports = Content
+};
+
+module.exports = Content;
