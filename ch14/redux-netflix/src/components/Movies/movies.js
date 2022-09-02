@@ -1,16 +1,17 @@
-const React = require('react')
-const { connect } = require('react-redux')
-const { Link } = require('react-router')
-const movies = require('../../movies.json')
+const React = require('react');
+const { connect } = require('react-redux');
+const { Link } = require('react-router');
+const movies = require('../../movies.json');
 const {
   fetchMoviesActionCreator
-} = require('modules/movies.js')
-const styles = require('./movies.css')
+} = require('modules/movies.js');
+const styles = require('./movies.css');
 
 class Movies extends React.Component {
   componentWillMount() {
     this.props.fetchMovies(movies)
   }
+
   // Comment componentWillMount() and uncomment componentDidMount to use async fetch
 
   // componentDidMount() {
@@ -20,12 +21,13 @@ class Movies extends React.Component {
   //       this.props.fetchMovies(movies)
   //     })
   // }
+
   render() {
     const {
       children,
       movies = [],
       params = {}
-    } = this.props
+    } = this.props;
 
     return (
       <div className={styles.movies}>
@@ -50,4 +52,4 @@ module.exports = connect(({movies}) => ({
   movies: movies.all
 }), {
   fetchMovies: fetchMoviesActionCreator
-})(Movies)
+})(Movies);
