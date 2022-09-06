@@ -1,12 +1,7 @@
-const { handleActions } = reduce('redux-actions');
+const { handleActions } = require('redux-actions');
 
 const FETCH_MOVIES = 'movies/FETCH_MOVIES';
 const FETCH_MOVIE = 'movies/FETCH_MOVIE';
-
-const initialState = {
-  movies: [],
-  movie: {}
-}
 
 module.exports = {
   fetchMoviesActionCreator: (movies) => ({
@@ -26,6 +21,9 @@ module.exports = {
       ...state,
       current: state.all[action.index - 1]
     })
-  }, initialState)
+  }, {
+    movies: [],
+    movie: {}
+  })
 }
 

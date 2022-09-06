@@ -9,6 +9,7 @@ const {
 
 const styles = require('./movies.css');
 
+
 class Movies extends React.Component {
   componentWillMount() {
     this.props.fetchMovies(movies);
@@ -25,11 +26,7 @@ class Movies extends React.Component {
   // }
 
   render() {
-    const {
-      children,
-      movies = [],
-      params = {}
-    } = this.props;
+    const { children, movies = [], params = {} } = this.props;
 
     return (
       <div className={styles.movies}>
@@ -54,4 +51,4 @@ module.exports = connect(({movies}) => ({
   movies: movies.all
 }), {
   fetchMovies: fetchMoviesActionCreator
-})(Movies);
+})(Movies)

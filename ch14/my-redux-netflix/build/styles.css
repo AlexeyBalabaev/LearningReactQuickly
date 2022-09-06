@@ -1,0 +1,142 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+.app__2Tw6I {
+  width: 100vw;
+  height: 100vh;
+}.movies__1yh7H {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  overflow-y: auto;
+  background-color: #000;
+}
+
+.list__3moKA {
+  width: 100%;
+}
+
+.listHidden__WYHLr {
+  display: none;
+}
+
+.movie__Gn3Dz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 240px;
+  height: 320px;
+  margin: 10px auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 667px) {
+  .movies__1yh7H {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+  }
+
+  .list__3moKA, .listHidden__WYHLr {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+  }
+
+  .movie__Gn3Dz {
+    margin: 10px;
+  }
+}
+.movie__3noIW {
+  padding: 10px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.cover__EZ5Vw {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
+  margin: 10px auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.description__3mmHU {
+  width: 100%;
+  margin: 10px;
+}
+
+.title__1VLZs {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.825);
+}
+
+.year__2_XHk {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.325);
+}
+
+.starring__2OCep {
+  margin: 20px 0 0;
+}
+
+.actor__3UDtd {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.closeButton__3jsOq {
+  display: block;
+  padding: 10px 25px 10px 35px;
+  font-size: 20px;
+  line-height: 2.45;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 667px) {
+  .movie__3noIW {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-height: 100%;
+    min-width: 667px;
+    overflow-y: auto;
+  }
+}

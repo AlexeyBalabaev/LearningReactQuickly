@@ -8,9 +8,8 @@ const {
 const App = require('components/app/app');
 const Movies = require('components/movies/movies.js');
 const Movie = require('components/movie/movie.js');
-const modules = require('../../redux-netflix/src/modules');
 
-modules.exports = (
+module.exports = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Movies} />
