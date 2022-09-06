@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexeyBalabaev/LearningReactQuickly"
+    "url": "git+https://github.com/AlexeyBalabaev/LearningReactQuickly.git"
   },
   "author": "Alex Balabaev",
   "license": "ISC",
