@@ -1,21 +1,21 @@
-const React = require('react')
-const { connect } = require('react-redux')
-const { Link } = require('react-router')
-const axios = require('axios')
-const clean = require('clean-tagged-string').default
+const React = require('react');
+const { connect } = require('react-redux');
+const { Link } = require('react-router');
+const axios = require('axios');
+const clean = require('clean-tagged-string').default;
 const {
   fetchMovieActionCreator
-} = require('modules/movies.js')
-const styles = require('./movie.css')
+} = require('modules/movies.js');
+const styles = require('./movie.css');
 
 class Movie extends React.Component {
   componentWillMount() {
-    this.fetchMovie(this.props.params.id)
+    this.fetchMovie(this.props.params.id);
   }
 
   componentWillUpdate(next) {
     if (this.props.params.id !== next.params.id) {
-      this.fetchMovie(next.params.id)
+      this.fetchMovie(next.params.id);
     }
   }
 
@@ -29,11 +29,11 @@ class Movie extends React.Component {
           name
         }
       }
-    }`
+    }`;
 
     axios.get(`/q?query=${query}`).then(response => {
-      this.props.fetchMovie(response)
-    })
+      this.props.fetchMovie(response);
+    });
   }
 
   render() {
@@ -41,7 +41,7 @@ class Movie extends React.Component {
       movie = {
         starring: []
       }
-    } = this.props
+    } = this.props;
 
     return (
       <div

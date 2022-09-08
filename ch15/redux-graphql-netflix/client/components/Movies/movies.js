@@ -1,12 +1,13 @@
-const React = require('react')
-const { connect } = require('react-redux')
-const { Link } = require('react-router')
-const axios = require('axios')
-const clean = require('clean-tagged-string').default
+const React = require('react');
+const { connect } = require('react-redux');
+const { Link } = require('react-router');
+const axios = require('axios');
+const clean = require('clean-tagged-string').default;
+
 const {
   fetchMoviesActionCreator
 } = require('modules/movies.js')
-const styles = require('./movies.css')
+const styles = require('./movies.css');
 
 class Movies extends React.Component {
   componentWillMount() {
@@ -15,10 +16,10 @@ class Movies extends React.Component {
         title,
         cover
       }
-    }`
+    }`;
 
     axios.get(`/q?query=${query}`).then(response => {
-      this.props.fetchMovies(response)
+      this.props.fetchMovies(response);
     })
   }
 
@@ -27,7 +28,7 @@ class Movies extends React.Component {
       children,
       movies = [],
       params = {}
-    } = this.props
+    } = this.props;
 
     return (
       <div className={styles.movies}>

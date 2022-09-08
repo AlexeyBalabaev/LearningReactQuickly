@@ -39147,7 +39147,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _templateObject = _taggedTemplateLiteral(['{\n      movies {\n        title,\n        cover\n      }\n    }'], ['{\n      movies {\n        title,\n        cover\n      }\n    }']);
+	var _templateObject = _taggedTemplateLiteral(['{\n      movies {\n        title, \n        cover\n      }\n    }'], ['{\n      movies {\n        title, \n        cover\n      }\n    }']);
 
 	function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -39173,8 +39173,8 @@
 
 	var styles = __webpack_require__(657);
 
-	var Movies = function (_React$Component) {
-	  _inherits(Movies, _React$Component);
+	var Movies = function (_React$Comoponent) {
+	  _inherits(Movies, _React$Comoponent);
 
 	  function Movies() {
 	    _classCallCheck(this, Movies);
@@ -39213,12 +39213,10 @@
 	          movies.map(function (movie, index) {
 	            return React.createElement(
 	              Link,
-	              {
-	                key: index,
-	                to: '/movies/' + (index + 1) },
+	              { key: index, to: '/movies/$index + 1' },
 	              React.createElement('div', {
 	                className: styles.movie,
-	                style: { backgroundImage: 'url(' + movie.cover + ')' } })
+	                style: { background: 'url(' + movie.cover + ')' } })
 	            );
 	          })
 	        ),
@@ -39228,7 +39226,7 @@
 	  }]);
 
 	  return Movies;
-	}(React.Component);
+	}(React.Comoponent);
 
 	module.exports = connect(function (_ref) {
 	  var movies = _ref.movies;
@@ -57885,8 +57883,8 @@
 
 	var styles = __webpack_require__(660);
 
-	var Movie = function (_React$Component) {
-	  _inherits(Movie, _React$Component);
+	var Movie = function (_Recat$Component) {
+	  _inherits(Movie, _Recat$Component);
 
 	  function Movie() {
 	    _classCallCheck(this, Movie);
@@ -57915,7 +57913,7 @@
 
 	      var query = clean(_templateObject, id);
 
-	      axios.get('/q?query=' + query).then(function (response) {
+	      axios.get('/q?query=?{query}').then(function (response) {
 	        _this2.props.fetchMovie(response);
 	      });
 	    }
@@ -57923,9 +57921,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var _props$movie = this.props.movie,
-	          movie = _props$movie === undefined ? {
-	        starring: []
-	      } : _props$movie;
+	          movie = _props$movie === undefined ? { starring: [] } : _props$movie;
 
 
 	      return React.createElement(
@@ -57939,16 +57935,8 @@
 	        React.createElement(
 	          'div',
 	          { className: styles.description },
-	          React.createElement(
-	            'div',
-	            { className: styles.title },
-	            movie.title
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: styles.year },
-	            movie.year
-	          ),
+	          React.createElement('div', { className: styles.title }),
+	          React.createElement('div', { className: styles.year }),
 	          React.createElement(
 	            'div',
 	            { className: styles.starring },
@@ -57957,9 +57945,7 @@
 	              var index = arguments[1];
 	              return React.createElement(
 	                'div',
-	                {
-	                  key: index,
-	                  className: styles.actor },
+	                { key: index, className: styles.actor },
 	                actor.name
 	              );
 	            })
@@ -57967,9 +57953,7 @@
 	        ),
 	        React.createElement(
 	          Link,
-	          {
-	            className: styles.closeButton,
-	            to: '/movies' },
+	          { className: styles.closeButton, to: '/movies' },
 	          '\u2190'
 	        )
 	      );
@@ -57977,7 +57961,7 @@
 	  }]);
 
 	  return Movie;
-	}(React.Component);
+	}(Recat.Component);
 
 	module.exports = connect(function (_ref) {
 	  var movies = _ref.movies;

@@ -1,12 +1,13 @@
-const React = require('react')
-const { connect } = require('react-redux')
-const styles = require('./app.css')
+const React = require('react');
+const { connect } = require('react-redux');
+
+const styles = require('./app.css');
 
 class App extends React.Component {
   render() {
     const {
       children
-    } = this.props
+    } = this.props;
 
     return (
       <div className={styles.app}>
@@ -16,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-module.exports = connect()(App)
+module.exports = connect()(App);
