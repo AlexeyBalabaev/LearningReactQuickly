@@ -5,8 +5,9 @@ const {
   GraphQLString,
   GraphQLInt,
   GraphQLFloat
-} = require('graphql')
-const movies = require('./movies.json')
+} = require('graphql');
+
+const movies = require('./movies.json');
 
 const movie = new GraphQLObjectType({
   name: 'Movie',
@@ -34,7 +35,7 @@ const movie = new GraphQLObjectType({
       }))
     }
   }
-})
+});
 
 module.exports = new GraphQLSchema({
   query: new GraphQLObjectType({

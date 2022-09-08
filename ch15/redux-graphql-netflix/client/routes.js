@@ -1,13 +1,14 @@
-const React = require('react')
+const React = require('react');
 const {
   Router,
   Route,
   IndexRoute,
   browserHistory
-} = require('react-router')
-const App = require('components/app/app')
-const Movies = require('components/movies/movies.js')
-const Movie = require('components/movie/movie.js')
+} = require('react-router');
+
+const App = require('components/app/app');
+const Movies = require('components/movies/movies.js');
+const Movie = require('components/movie/movie.js');
 
 module.exports = (
   <Router history={browserHistory}>
