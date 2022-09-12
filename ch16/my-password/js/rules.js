@@ -1,6 +1,6 @@
 module.exports = {
   upperCase: {
-    messamessagege: 'Must have at least one upper-case character.',
+    message: 'Must have at least one upper-case character.',
     pattern: /([A-Z]+)/
   },
   lowerCase: {
