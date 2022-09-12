@@ -1,13 +1,13 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
-const generatePassword = require('../js/generate-password.js')
+const React = require('react');
+const ReactDOM = require('react-dom');
+const generatePassword = require('../js/generate-password.js');
 
-const rules = require('../js/rules.js')
+const rules = require('../js/rules.js');
 
-const PasswordGenerate = require('./password-generate.jsx')
-const PasswordInfo = require('./password-info.jsx')
-const PasswordInput = require('./password-input.jsx')
-const PasswordVisibility = require('./password-visibility.jsx')
+const PasswordGenerate = require('./password-generate.jsx');
+const PasswordInfo = require('./password-info.jsx');
+const PasswordInput = require('./password-input.jsx');
+const PasswordVisibility = require('./password-visibility.jsx');
 
 class Password extends React.Component {
   constructor(props) {
@@ -76,4 +76,4 @@ class Password extends React.Component {
     )
 }}
 
-module.exports = Password
+module.exports = Password;
