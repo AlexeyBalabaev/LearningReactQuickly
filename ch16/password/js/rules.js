@@ -1,6 +1,6 @@
-module.exports =  {
+module.exports = {
   upperCase: {
-    message:  'Must have at least one upper-case character',
+    message: 'Must have at least one upper-case character',
     pattern: /([A-Z]+)/
   },
   lowerCase: {
@@ -19,4 +19,4 @@ module.exports =  {
     message: 'Must be more than 6 characters',
     pattern: /(.{6,})/
   }
-}
+};

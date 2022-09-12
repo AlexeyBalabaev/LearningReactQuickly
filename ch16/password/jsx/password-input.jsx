@@ -1,4 +1,5 @@
-const React = require('react')
+const React = require('react');
+
 class PasswordInput extends React.Component {
   render() {
     return (
@@ -11,4 +12,4 @@ class PasswordInput extends React.Component {
   }
 }
 
-module.exports = PasswordInput
+module.exports = PasswordInput;

@@ -9500,8 +9500,8 @@ module.exports = getIteratorFn;
 
 const React = __webpack_require__(17);
 const ReactDOM = __webpack_require__(51);
-const generatePassword = __webpack_require__(84);
 
+const generatePassword = __webpack_require__(84);
 const rules = __webpack_require__(85);
 
 const PasswordGenerate = __webpack_require__(87);
@@ -9512,21 +9512,34 @@ const PasswordVisibility = __webpack_require__(90);
 class Password extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { strength: {}, password: '', visible: false, ok: false };
+    this.state = {
+      strength: {},
+      password: '',
+      visible: false,
+      ok: false
+    };
     this.generate = this.generate.bind(this);
     this.checkStrength = this.checkStrength.bind(this);
     this.toggleVisibility = this.toggleVisibility.bind(this);
   }
+
   checkStrength(event) {
     let password = event.target.value;
-    this.setState({ password: password });
     let strength = {};
+
+    this.setState({
+      password: password
+    });
+
     Object.keys(this.props).forEach((key, index, list) => {
       if (this.props[key] && rules[key].pattern.test(password)) {
         strength[key] = true;
       }
     });
-    this.setState({ strength: strength }, () => {
+
+    this.setState({
+      strength: strength
+    }, () => {
       if (Object.keys(this.state.strength).length == Object.keys(this.props).length) {
         this.setState({ ok: true });
       } else {
@@ -9534,15 +9547,24 @@ class Password extends React.Component {
       }
     });
   }
+
   toggleVisibility() {
-    this.setState({ visible: !this.state.visible }, () => {});
+    this.setState({
+      visible: !this.state.visible
+    }, () => {});
   }
 
   generate() {
-    this.setState({ visible: true, password: generatePassword() }, () => {
-      this.checkStrength({ target: { value: this.state.password } });
+    this.setState({
+      visible: true,
+      password: generatePassword()
+    }, () => {
+      this.checkStrength({
+        target: { value: this.state.password }
+      });
     });
   }
+
   render() {
     var processedRules = Object.keys(this.props).map(key => {
       if (this.props[key]) {
@@ -9556,7 +9578,7 @@ class Password extends React.Component {
 
     return React.createElement(
       'div',
-      { className: 'well form-group col-md-6' },
+      { className: 'well from-group col-md-6' },
       React.createElement(
         'label',
         null,
@@ -9597,7 +9619,6 @@ const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const NUMBERS = '0123456789';
 const ALL = `${SPECIALS}${LOWERCASE}${UPPERCASE}${NUMBERS}`;
 
-// adding +1 to avoid 0 as a value in case we want to use it differently than the index.
 const getIterable = length => Array.from({ length }, (_, index) => index + 1);
 
 const pick = (set, min, max) => {
@@ -9607,16 +9628,12 @@ const pick = (set, min, max) => {
     length += Math.floor(Math.random() * (max - min));
   }
 
-  // creating an iterable element with empty strings to avoid for and while loops
-  // and using a more declarative approach.
-
   return getIterable(length).map(() => set.charAt(Math.floor(Math.random() * set.length))).join('');
 };
 
 const shuffle = set => {
   let array = set.split('');
   let length = array.length;
-  // we reverse the iterable to get value from max to min.
   let iterable = getIterable(length).reverse();
 
   let shuffled = iterable.reduce((acc, value, index) => {
@@ -9631,7 +9648,7 @@ const shuffle = set => {
 };
 
 module.exports = () => {
-  let password = pick(SPECIALS, 1) + pick(LOWERCASE, 1) + pick(NUMBERS, 1) + pick(UPPERCASE, 1) + pick(ALL, 4, 12);
+  let password = pick(SPECIALS, 1) + pick(LOWERCASE, 1) + pick(UPPERCASE, 1) + pick(NUMBERS, 1) + pick(ALL, 4, 12);
 
   return shuffle(password);
 };
@@ -9642,15 +9659,15 @@ module.exports = () => {
 
 module.exports = {
   upperCase: {
-    message: 'Must have at least one upper-case character',
+    messamessagege: 'Must have at least one upper-case character.',
     pattern: /([A-Z]+)/
   },
   lowerCase: {
-    message: 'Must have at least one lower-case character',
+    message: 'Must have at least one lower-case character.',
     pattern: /([a-z]+)/
   },
   special: {
-    message: 'Must have at least one special character (#$@!&%...)',
+    message: 'Must have at least one special character (#$@!&^%...).',
     pattern: /([\!\@\#\$\%\^\&\*\(\)\_\+\{\}\:\"\<\>\?\\|\[\]\/'\,\.\`\~]+)/
   },
   number: {
@@ -9658,7 +9675,7 @@ module.exports = {
     pattern: /([0-9]+)/
   },
   'over6': {
-    message: 'Must be more than 6 characters',
+    message: 'Must be more than 6 characters.',
     pattern: /(.{6,})/
   }
 };
@@ -9672,11 +9689,11 @@ const ReactDOM = __webpack_require__(51);
 const Password = __webpack_require__(83);
 
 ReactDOM.render(React.createElement(Password, {
-    upperCase: true,
-    lowerCase: true,
-    special: true,
-    number: true,
-    over6: true }), document.getElementById('password'));
+  upperCase: true,
+  lowerCase: true,
+  special: true,
+  number: true,
+  over6: true }), document.getElementById('password'));
 
 /***/ }),
 /* 87 */
@@ -9685,6 +9702,7 @@ ReactDOM.render(React.createElement(Password, {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 const React = __webpack_require__(17);
+
 class PasswordGenerate extends React.Component {
   render() {
     return React.createElement(
@@ -9694,6 +9712,7 @@ class PasswordGenerate extends React.Component {
     );
   }
 }
+
 module.exports = PasswordGenerate;
 
 /***/ }),
@@ -9716,19 +9735,23 @@ class PasswordInfo extends React.Component {
         'ul',
         null,
         this.props.rules.map(function (processedRule, index, list) {
-          if (processedRule.isCompleted) return React.createElement(
-            'li',
-            { key: processedRule.key },
-            React.createElement(
-              'strike',
-              null,
+          if (processedRule.isCompleted) {
+            return React.createElement(
+              'li',
+              { key: processedRule.key },
+              React.createElement(
+                'strike',
+                null,
+                processedRule.rule.message
+              )
+            );
+          } else {
+            return React.createElement(
+              'li',
+              { key: processedRule.key },
               processedRule.rule.message
-            )
-          );else return React.createElement(
-            'li',
-            { key: processedRule.key },
-            processedRule.rule.message
-          );
+            );
+          }
         })
       )
     );
@@ -9769,7 +9792,7 @@ class PasswordVisibility extends React.Component {
       React.createElement("input", { className: "",
         type: "checkbox",
         checked: this.props.checked,
-        onChange: this.props.onChange }),
+        onChange: this.props.onCHange }),
       " Show password"
     );
   }

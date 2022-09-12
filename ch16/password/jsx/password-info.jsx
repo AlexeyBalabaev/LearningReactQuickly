@@ -1,4 +1,5 @@
-const React = require('react')
+const React = require('react');
+
 class PasswordInfo extends React.Component {
   render() {
     return (
@@ -17,4 +18,4 @@ class PasswordInfo extends React.Component {
   }
 }
 
-module.exports = PasswordInfo
+module.exports = PasswordInfo;

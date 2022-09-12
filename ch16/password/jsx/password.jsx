@@ -11,16 +11,16 @@ const PasswordVisibility = require('./password-visibility.jsx');
 
 class Password extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {strength: {}, password: '', visible: false, ok: false}
-    this.generate = this.generate.bind(this)
-    this.checkStrength = this.checkStrength.bind(this)
-    this.toggleVisibility = this.toggleVisibility.bind(this)
+    super(props);
+    this.state = {strength: {}, password: '', visible: false, ok: false};
+    this.generate = this.generate.bind(this);
+    this.checkStrength = this.checkStrength.bind(this);
+    this.toggleVisibility = this.toggleVisibility.bind(this);
   }
   checkStrength(event) {
-    let password = event.target.value
-    this.setState({password: password})
-    let strength = {}
+    let password = event.target.value;
+    this.setState({password: password});
+    let strength = {};
     Object.keys(this.props).forEach((key, index, list)=>{
       if (this.props[key] && rules[key].pattern.test(password)) {
         strength[key] = true
@@ -53,7 +53,8 @@ class Password extends React.Component {
           isCompleted: this.state.strength[key] || false
         }
       }
-    })
+    });
+
     return (
       <div className="well form-group col-md-6">
         <label>Password</label>
