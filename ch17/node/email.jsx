@@ -1,4 +1,4 @@
-const React = require('react')
+const React = require('react');
 
 const Email = (props) => {
   return (
@@ -9,5 +9,5 @@ const Email = (props) => {
   )
 }
 
-module.exports = Email
+module.exports = Email;
 

@@ -1,16 +1,18 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
-const request = require('axios')
+const React = require('react');
+const ReactDOM = require('react-dom');
+const request = require('axios');
 
-const url = 'http://localhost:3000/messages'
-const fD = ReactDOM.findDOMNode
+const url = 'http://localhost:3000/messages';
+const fD = ReactDOM.findDOMNode;
 
 class MessageList extends React.Component {
   render() {
-    var messages = this.props.messages
+    var messages = this.props.messages;
+
     if (!messages || !messages.length>0) return (
         <p>No messages yet</p>
     )
+
     return (
       <table className="table ">
         <caption>Messages</caption>
@@ -37,26 +39,32 @@ class MessageList extends React.Component {
 
 class NewMessage extends React.Component {
   constructor(props) {
-    super(props)
-    this.addMessage = this.addMessage.bind(this)
-    this.keyup = this.keyup.bind(this)
+    super(props);
+    this.addMessage = this.addMessage.bind(this);
+    this.keyup = this.keyup.bind(this);
   }
+
   addMessage() {
-    let name = fD(this.refs.name).value.trim()
-    let message = fD(this.refs.message).value.trim()
+    let name = fD(this.refs.name).value.trim();
+    let message = fD(this.refs.message).value.trim();
+
     if (!name || !message) {
-      return console.error('Name and message cannot be empty')
+      return console.error('Name and message cannot be empty');
     }
+
     this.props.addMessageCb({
       name: name,
       message: message
-    })
-    fD(this.refs.name).value = ''
-    fD(this.refs.message).value = ''
+    });
+
+    fD(this.refs.name).value = '';
+    fD(this.refs.message).value = '';
   }
+
   keyup(e) {
     if (e.keyCode == 13) return this.addMessage()
   }
+
   render() {
     return (
       <div className="row-fluid" id="new-message">
@@ -79,11 +87,12 @@ class NewMessage extends React.Component {
 
 class MessageBoard extends React.Component {
   constructor(ops) {
-    super(ops)
-    this.addMessage = this.addMessage.bind(this)
+    super(ops);
+    this.addMessage = this.addMessage.bind(this);
     if (this.props.messages)
-      this.state = {messages: this.props.messages}
+      this.state = {messages: this.props.messages};
   }
+
   componentDidMount() {
     request.get(url)
       .then(response => response.data)
@@ -94,21 +103,24 @@ class MessageBoard extends React.Component {
         }
         console.log(messages)
         this.setState({messages: messages})
-      })
+      });
   }
+
   addMessage(message) {
-    let messages = this.state.messages
+    let messages = this.state.messages;
+
     request.post(url, message)
       .then(result => result.data)
       .then((data) =>{
         if(!data){
-          return console.error('Failed to save')
+          return console.error('Failed to save');
         }
-        console.log('Saved!')
-        messages.unshift(data)
-        this.setState({messages: messages})
-    })
+        console.log('Saved!');
+        messages.unshift(data);
+        this.setState({messages: messages});
+    });
   }
+
   render() {
     return (
       <div>
@@ -119,4 +131,4 @@ class MessageBoard extends React.Component {
   }
 }
 
-module.exports = MessageBoard
+module.exports = MessageBoard;
