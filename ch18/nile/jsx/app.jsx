@@ -1,17 +1,17 @@
-const React = require('react')
-const ReactDOM = require('react-dom')
+const React = require('react');
+const ReactDOM = require('react-dom');
 const { hashHistory,
   Router,
   Route,
   IndexRoute,
   Link,
   IndexLink
-} = require('react-router')
+} = require('react-router');
 
-const Modal = require('./modal.jsx')
-const Cart = require('./cart.jsx')
-const Checkout = require('./checkout.jsx')
-const Product = require('./product.jsx')
+const Modal = require('./modal.jsx');
+const Cart = require('./cart.jsx');
+const Checkout = require('./checkout.jsx');
+const Product = require('./product.jsx');
 
 const PRODUCTS = [
   { id: 0, src: 'images/proexpress-cover.jpg', title: 'Pro Express.js', url: 'http://amzn.to/1D6qiqk' },
@@ -19,7 +19,7 @@ const PRODUCTS = [
   { id: 2, src: 'images/expressapiref-cover.jpg', title: 'Express API Reference', url: 'http://amzn.to/1xcHanf' },
   { id: 3, src: 'images/reactquickly-cover.jpg', title: 'React Quickly', url: 'https://www.manning.com/books/react-quickly'},
   { id: 4, src: 'images/fullstack-cover.png', title: 'Full Stack JavaScript', url: 'http://www.apress.com/9781484217504'}
-]
+];
 
 const Heading = () => {
   return <h1>Nile Book Store</h1>
@@ -33,14 +33,16 @@ const Copy = () => {
 class App extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.isModal = (nextProps.location.state &&
-      nextProps.location.state.modal)
+      nextProps.location.state.modal);
     if (this.isModal &&
       nextProps.location.key !== this.props.location.key) {
-      this.previousChildren = this.props.children
+      this.previousChildren = this.props.children;
     }
   }
+
   render() {
-    console.log('Modal: ', this.isModal)
+    console.log('Modal: ', this.isModal);
+
     return (
       <div className="well">
         <Heading/>
@@ -80,13 +82,15 @@ class Index extends React.Component {
     )
   }
 }
-let cartItems = {}
+
+let cartItems = {};
+
 const addToCart = (id) => {
   if (cartItems[id])
-    cartItems[id] += 1
+    cartItems[id] += 1;
   else
-    cartItems[id] = 1
-}
+    cartItems[id] = 1;
+};
 
 ReactDOM.render((
   <Router history={hashHistory}>

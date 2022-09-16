@@ -1,16 +1,18 @@
-const React = require('react')
+const React = require('react');
 const {
   Link
-} = require('react-router')
+} = require('react-router');
 
 class Product extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleBuy = this.handleBuy.bind(this)
+    super(props);
+    this.handleBuy = this.handleBuy.bind(this);
   }
+
   handleBuy (event) {
-    this.props.route.addToCart(this.props.params.id)
+    this.props.route.addToCart(this.props.params.id);
   }
+
   render() {
     return (
       <div>
@@ -30,4 +32,4 @@ class Product extends React.Component {
   }
 }
 
-module.exports = Product
+module.exports = Product;

@@ -1,10 +1,10 @@
 {
-  "name": "nile",
+  "name": "book-shelf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "scripts": {
     "build": "node ./node_modules/webpack/bin/webpack.js -w"
   },

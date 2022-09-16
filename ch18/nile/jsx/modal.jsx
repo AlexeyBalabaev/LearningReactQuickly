@@ -1,11 +1,11 @@
-const React = require('react')
+const React = require('react');
 const {
   Link
-} = require('react-router')
+} = require('react-router');
 
 class Modal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.styles = {
       position: 'fixed',
       top: '20%',
@@ -18,7 +18,7 @@ class Modal extends React.Component {
       boxShadow: '0px 0px 150px 130px rgba(0, 0, 0, 0.5)',
       overflow: 'auto',
       background: '#fff'
-    }
+    };
   }
   render() {
     return (
@@ -30,4 +30,4 @@ class Modal extends React.Component {
   }
 }
 
-module.exports = Modal
+module.exports = Modal;

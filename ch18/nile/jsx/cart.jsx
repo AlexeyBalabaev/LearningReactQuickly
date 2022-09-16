@@ -1,7 +1,7 @@
-const React = require('react')
+const React = require('react');
 const {
   Link
-} = require('react-router')
+} = require('react-router');
 
 class Cart extends React.Component {
   render() {
@@ -18,4 +18,4 @@ class Cart extends React.Component {
   }
 }
 
-module.exports = Cart
+module.exports = Cart;
