@@ -14,8 +14,8 @@
     "express.js",
     "mongodb"
   ],
-  "author": "Azat Mardan",
-  "license": "MIT",
+  "author": "Alex Balabaev",
+  "license": "ISC",
   "babel": {
     "presets": [
       "react"
